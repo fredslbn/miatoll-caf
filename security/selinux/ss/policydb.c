@@ -43,6 +43,7 @@
 #include "conditional.h"
 #include "mls.h"
 #include "services.h"
+#include "flask.h"
 
 #define _DEBUG_HASHES
 
