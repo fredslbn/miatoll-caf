@@ -14,7 +14,7 @@ jobs:
             ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime && date
             git clone --depth=1 https://github.com/fredslbn/miatoll-caf.git -b main builder_kernel
             cd builder_kernel
-            bash .circleci/linaro.sh
+            bash .circleci/miatoll.sh
 workflows:
   version: 2.1
   cooking:
