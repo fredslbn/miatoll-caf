@@ -20,7 +20,7 @@ DEVICE=miatoll
 DEFCONFIG=${DEVICE}-perf_defconfig
 
 # Select LTO variant ( Full LTO by default )
-DISABLE_LTO=1
+DISABLE_LTO=0
 THIN_LTO=0
 
 # Files
