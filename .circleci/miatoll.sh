@@ -201,7 +201,7 @@ function exports() {
         export SUBARCH=arm64
         
         # Export Local Version
-        #export LOCALVERSION="-${VERSION}"
+        # export LOCALVERSION="-${VERSION}"
         
         # KBUILD HOST and USER
         export KBUILD_BUILD_HOST=Pancali
@@ -211,8 +211,8 @@ function exports() {
 	    export DISTRO=$(source /etc/os-release && echo "${NAME}")
 	    
 	    # Server caching for speed up compile
-	    #export LC_ALL=C && export USE_CCACHE=1
-	    #ccache -M 100G
+	    # export LC_ALL=C && export USE_CCACHE=1
+	    # ccache -M 100G
 	
 	}
         
@@ -346,15 +346,15 @@ function zipping() {
 	cp $IMAGE AnyKernel3
 	cp $DTBO AnyKernel3
 	cp $DTB AnyKernel3/dtb
-	#find $DTB -name "*.dtb" -exec cat {} + > AnyKernel3/dtb
+	# find $DTB -name "*.dtb" -exec cat {} + > AnyKernel3/dtb
 	
 	# Zipping and Push Kernel
 	cd AnyKernel3 || exit 1
         zip -r9 ${ZIPNAME} *
         MD5CHECK=$(md5sum "$ZIPNAME" | cut -d' ' -f1)
         echo "Zip: $ZIPNAME"
-        #curl -T $ZIPNAME temp.sh; echo
-        #curl -T $ZIPNAME https://oshi.at; echo
+        # curl -T $ZIPNAME temp.sh; echo
+        # curl -T $ZIPNAME https://oshi.at; echo
         curl --upload-file $ZIPNAME https://free.keep.sh
     cd ..
 }
